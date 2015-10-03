@@ -1,3 +1,7 @@
+### 0.0.6
+
+* Removing jQuery dependency
+
 ### 0.0.5
 
 * Restoring dependencies
