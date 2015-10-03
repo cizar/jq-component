@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/cizar/jq-component#readme",
   "dependencies": {
-    "handlebars": "^4.0.0",
-    "jquery": "^2.0.0"
+    "handlebars": "^4.0.0"
   }
 }
