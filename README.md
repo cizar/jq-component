@@ -18,7 +18,7 @@ Create the component view with Handlebars syntax.
     <h1>Hello {{name}}!</h1>
     <form on-submit="this.changeName()">
       <input type="text" ref="name">
-      <input type="button" value="Change">
+      <input type="submit" value="Change">
     </form>
   </script>
 </div>
@@ -48,7 +48,7 @@ Apply the component plugin to the element.
 Or use the plugin in NodeJS environment
 
 ```bash
-npm install jq-component
+npm install jquery jq-component
 ```
 
 Then just require the plugin like any CommonJS module
@@ -58,7 +58,7 @@ var $ = require('jquery');
 require('jq-component');
 
 $('#my-component').component(function() {
-  console.log('component applied to', this);
+  alert('Hello World!');
 });
 ```
 
