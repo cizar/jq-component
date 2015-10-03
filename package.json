@@ -1,0 +1,23 @@
+{
+  "name": "jq-component",
+  "version": "0.0.1",
+  "description": "Simple jQuery component plugin",
+  "main": "src/jquery.component.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cizar/jquery-component.git"
+  },
+  "author": "Cesar Kastli <cesarkastli@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cizar/jquery-component/issues"
+  },
+  "homepage": "https://github.com/cizar/jquery-component#readme",
+  "dependencies": {
+    "handlebars": "^4.0.0",
+    "jquery": "^2.0.0"
+  }
+}

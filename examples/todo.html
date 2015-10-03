@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>jQuery Component (TODO)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" media="screen">
+  </head>
+  <body>
+
+    <div class="container">
+      <h1>TODO</h1>
+      <div id="my-component">
+        <script type="text/x-handlebars-template">
+          <ul class="list-group">
+            {{#each items}}
+              <li class="list-group-item" {{#if done}}style="text-decoration: line-through;"{{/if}}>
+                {{this.name}}
+                <div class="pull-right button-group">
+                  {{#if done}}
+                    <button type="button" class="btn btn-warning btn-xs" on-click="this.reopen({{@index}})">
+                      <span class="glyphicon glyphicon-refresh"></span>
+                    </button>
+                  {{else}}
+                    <button type="button" class="btn btn-success btn-xs" on-click="this.done({{@index}})">
+                      <span class="glyphicon glyphicon-ok"></span>
+                    </button>
+                  {{/if}}
+                  <button type="button" class="btn btn-danger btn-xs" on-click="this.remove({{@index}})">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+              </li>
+            {{/each}}
+          </ul>
+        </script>
+        <div class="input-group">
+          <input type="text" ref="name" value="" class="form-control">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-primary" on-click="this.add()">Add</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.js"></script>
+    <script src="../src/jquery.component.js"></script>
+
+    <script type="text/javascript">
+      $('#my-component').component(function() {
+        this.state.items = [
+          { name: 'Do something' },
+          { name: 'Go somewhere' },
+          { name: 'Code a component', done: true }
+        ];
+        this.add = function() {
+          $input = $(this.refs.name);
+          this.state.items.push({ name: $input.val() });
+          $input.val('');
+          this.render();
+        };
+        this.done = function(index) {
+          this.state.items[index].done = true;
+          this.render();
+        };
+        this.reopen = function(index) {
+          this.state.items[index].done = false;
+          this.render();
+        }
+        this.remove = function(index) {
+          this.state.items.splice(index, 1);
+          this.setState({ items: this.state.items });
+        };
+      });
+    </script>
+
+  </body>
+</html>

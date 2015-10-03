@@ -1,0 +1,19 @@
+{
+  "name": "jq-component",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cizar/jquery-component",
+  "authors": [
+    "Cesar Kastli <cesarkastli@gmail.com>"
+  ],
+  "description": "Simple jQuery component plugin",
+  "main": "src/jquery.component.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

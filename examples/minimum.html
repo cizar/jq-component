@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Component (minimum)</title>
+  </head>
+  <body>
+
+    <h1>Dog breeds</h1>
+
+    <div data-component='["Beagle","Bloodhound","Boston Terrier","Boxer","Bull Terrier","Bulldog","Bullmastiff"]'>
+      <script type="text/x-handlebars-template">
+        <ul>
+          {{#each this}}
+            <li>{{.}}</li>
+          {{/each}}
+        </ul>
+      </script>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.3/handlebars.js"></script>
+    <script src="../src/jquery.component.js"></script>
+
+  </body>
+</html>
