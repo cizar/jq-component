@@ -19,7 +19,7 @@
     if ('undefined' === typeof require) {
       throw new Error('The plugin "' + pluginName + '" requires Handlebars');
     }
-    $ = require('jquery');
+    Handlebars = require('handlebars');
   }
 
   var Plugin = function(element, args) {
