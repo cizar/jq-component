@@ -1,7 +1,7 @@
 {
   "name": "jq-component",
-  "version": "0.0.1",
-  "homepage": "https://github.com/cizar/jquery-component",
+  "version": "0.0.2",
+  "homepage": "https://github.com/cizar/jq-component",
   "authors": [
     "Cesar Kastli <cesarkastli@gmail.com>"
   ],
