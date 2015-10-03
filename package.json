@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/cizar/jq-component/issues"
   },
-  "homepage": "https://github.com/cizar/jq-component#readme"
+  "homepage": "https://github.com/cizar/jq-component#readme",
+  "dependencies": {
+    "handlebars": "^4.0.0",
+    "jquery": "^2.0.0"
+  }
 }
