@@ -1,8 +1,26 @@
-;(function($, undefined) {
+;(function(root, undefined) {
 
   'use strict';
 
   var pluginName = 'component';
+
+  var $ = root.jQuery;
+
+  if ('undefined' === typeof $) {
+    if ('undefined' === typeof require) {
+      throw new Error('The plugin "' + pluginName + '" requires jQuery');
+    }
+    $ = require('jquery');
+  }
+
+  var Handlebars = root.Handlebars;
+
+  if ('undefined' == typeof Handlebars) {
+    if ('undefined' === typeof require) {
+      throw new Error('The plugin "' + pluginName + '" requires Handlebars');
+    }
+    $ = require('jquery');
+  }
 
   var Plugin = function(element, args) {
     this.bootstrapping = true;
@@ -86,4 +104,4 @@
     });
   });
 
-}(jQuery));
+}(this));
