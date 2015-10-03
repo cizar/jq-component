@@ -1,3 +1,7 @@
+### 0.0.5
+
+* Restoring dependencies
+
 ### 0.0.4
 
 * Handlebars reference bugfix
