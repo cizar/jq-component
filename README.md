@@ -4,13 +4,13 @@ Simple jQuery component builder plugin strongly inspired in ReactJS syntax.
 
 ## Usage
 
-Install the plugin 
+Install the plugin
 
 ```bash
 bower install jq-component
 ```
 
-Create the component view with Handlebars syntax. 
+Create the component view with Handlebars syntax.
 
 ```html
 <div id="my-component">
@@ -36,11 +36,13 @@ Apply the component plugin to the element.
 
 ```html
 <script type="text/javascript">
-  $("#my-component").component(function() {
-    this.setState({ name: 'World' });
-    this.changeName = function() {
-      this.setState({ name: this.refs.name.value });
-    };
+  $(function() {
+    $("#my-component").component(function() {
+      this.setState({ name: 'World' });
+      this.changeName = function() {
+        this.setState({ name: this.refs.name.value });
+      };
+    });
   });
 </script>
 ```
@@ -61,4 +63,3 @@ $('#my-component').component(function() {
   alert('Hello World!');
 });
 ```
-
