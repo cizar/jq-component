@@ -35,12 +35,14 @@
             {{/each}}
           </ul>
         </script>
-        <div class="input-group">
-          <input type="text" ref="name" value="" class="form-control">
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-primary" on-click="this.add()">Add</button>
-          </span>
-        </div>
+        <form on-submit="this.add()">
+          <div class="input-group">
+            <input type="text" ref="name" class="form-control" autofocus>
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary">Add</button>
+            </span>
+          </div>
+        </form>
       </div>
     </div>
 
