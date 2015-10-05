@@ -15,7 +15,7 @@
         <script type="text/x-handlebars-template">
           <ul class="list-group">
             {{#each items}}
-              <li class="list-group-item" {{#if done}}style="text-decoration: line-through;"{{/if}}>
+              <li class="list-group-item {{#if done}}disabled{{/if}}">
                 {{this.name}}
                 <div class="pull-right button-group">
                   {{#if done}}
