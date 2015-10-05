@@ -1,6 +1,6 @@
 {
   "name": "jq-component",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple jQuery component plugin",
   "main": "src/jquery.component.js",
   "scripts": {

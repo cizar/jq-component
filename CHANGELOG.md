@@ -1,3 +1,8 @@
+### 0.0.7
+
+* Fix doc: component must be executed after DOM ready
+* Prepare views before execute the component controller
+
 ### 0.0.6
 
 * Removing jQuery dependency
