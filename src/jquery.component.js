@@ -26,6 +26,13 @@
     this.bootstrapping = true;
     this.element = element;
     this.state = {};
+    this.views = $('script[type^=text]', element).map(function() {
+      var source = $(this).html();
+      var $view = $('<div class="component-view">');
+      $view.data('template', Handlebars.compile(source));
+      $(this).replaceWith($view);
+      return $view;
+    });
     if ($.isPlainObject(args) || $.isArray(args)) {
       this.state = args;
     } else {
@@ -36,13 +43,6 @@
         args.call(this, element);
       }
     }
-    this.views = $('script[type^=text]', element).map(function() {
-      var source = $(this).html();
-      var $view = $('<div class="component-view">');
-      $view.data('template', Handlebars.compile(source));
-      $(this).replaceWith($view);
-      return $view;
-    });
     this.on(element, 'click [on-click]', this.onClick);
     this.on(element, 'submit [on-submit]', this.onSubmit);
     this.on(element, 'change [on-change]', this.onChange);
