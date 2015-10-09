@@ -10,7 +10,7 @@
 
     <div id="my-component">
       <script type="text/x-handlebars-template">
-        {{count}} <a href="#" on-click="this.onIncrement()">Increment</a>
+        {{count}} <a href="#" on-click="this.handleClick()">Increment</a>
       </script>
     </div>
 
@@ -19,9 +19,11 @@
     <script src="../src/jquery.component.js"></script>
 
     <script type="text/javascript">
-      $('#my-component').component(function() {
-        this.setState({ count: 0 });
-        this.onIncrement = function() {
+      $('#my-component').component({
+        getInitialState: function() {
+          return { count: 0 };
+        },
+        handleClick: function() {
           this.setState({ count: this.state.count + 1 });
         };
       });

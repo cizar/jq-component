@@ -6,7 +6,7 @@
     "Cesar Kastli <cesarkastli@gmail.com>"
   ],
   "description": "Simple jQuery component plugin",
-  "main": "src/jquery.component.js",
+  "main": "jquery.component.js",
   "moduleType": [],
   "license": "MIT",
   "ignore": [

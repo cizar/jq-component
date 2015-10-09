@@ -8,7 +8,7 @@
 
     <div id="my-component">
       <script type="text/template">
-        <h1>Hello {{foo}}!</h1>
+        <h1>Hello {{name}}!</h1>
         <form on-submit="this.changeName()">
           <input type="text" ref="name">
           <input type="button" value="Change">
@@ -21,10 +21,12 @@
     <script src="../src/jquery.component.js"></script>
 
     <script type="text/javascript">
-      $("#my-component").component(function() {
-        this.setState({ foo: 'World' });
-        this.changeName = function() {
-          this.setState({ foo: this.refs.name.value });
+      $("#my-component").component({
+        getInitialState: function() {
+          return { name: 'World' };
+        },
+        changeName: function() {
+          this.setState({ name: this.refs.name.value });
         };
       });
     </script>

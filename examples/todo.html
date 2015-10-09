@@ -52,30 +52,34 @@
     <script src="../src/jquery.component.js"></script>
 
     <script type="text/javascript">
-      $('#my-component').component(function() {
-        this.state.items = [
-          { name: 'Do something' },
-          { name: 'Go somewhere' },
-          { name: 'Code a component', done: true }
-        ];
-        this.add = function() {
+      $('#my-component').component({
+        getInitialState: function() {
+          return {
+            items: [
+              { name: 'Do something' },
+              { name: 'Go somewhere' },
+              { name: 'Code a component', done: true }
+            ]
+          };
+        },
+        add: function() {
           $input = $(this.refs.name);
           this.state.items.push({ name: $input.val() });
           $input.val('');
           this.render();
-        };
-        this.done = function(index) {
+        },
+        done: function(index) {
           this.state.items[index].done = true;
           this.render();
-        };
-        this.reopen = function(index) {
+        },
+        reopen: function(index) {
           this.state.items[index].done = false;
           this.render();
-        }
-        this.remove = function(index) {
+        },
+        remove: function(index) {
           this.state.items.splice(index, 1);
           this.setState({ items: this.state.items });
-        };
+        }
       });
     </script>
 

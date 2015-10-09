@@ -2,7 +2,7 @@
   "name": "jq-component",
   "version": "0.0.7",
   "description": "Simple jQuery component plugin",
-  "main": "src/jquery.component.js",
+  "main": "jquery.component.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

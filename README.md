@@ -37,11 +37,13 @@ Apply the component plugin to the element.
 ```html
 <script type="text/javascript">
   $(function() {
-    $("#my-component").component(function() {
-      this.setState({ name: 'World' });
-      this.changeName = function() {
-        this.setState({ name: this.refs.name.value });
-      };
+    $("#my-component").component({
+      getInitialState: function() {
+        return { name: 'World' };
+      },
+      changeName: function() {
+        this.setState({ name: this.refs.name.value })
+      }
     });
   });
 </script>
@@ -59,7 +61,9 @@ Then just require the plugin like any CommonJS module
 var $ = require('jquery');
 require('jq-component');
 
-$('#my-component').component(function() {
-  alert('Hello World!');
+$('#my-component').component({
+  getInitialState: function() {
+    return { foo: 'bar' };
+  }
 });
 ```
