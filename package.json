@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cizar/jq-component#readme",
   "dependencies": {
-    "handlebars": "^4.0.0"
+    "handlebars": "^4.0.0",
+    "jq-render": "0.0.3"
   }
 }
