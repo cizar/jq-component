@@ -1,3 +1,7 @@
+### 0.1.1
+
+* Add jq-render dependency
+
 ### 0.1.0
 
 * Changes in plugin API
