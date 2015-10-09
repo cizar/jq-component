@@ -1,3 +1,7 @@
+### 0.1.0
+
+* Changes in plugin API
+
 ### 0.0.7
 
 * Fix doc: component must be executed after DOM ready
