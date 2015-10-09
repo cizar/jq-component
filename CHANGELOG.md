@@ -1,3 +1,7 @@
+### 0.1.2
+
+* Added componentDidRender() hook
+
 ### 0.1.1
 
 * Add jq-render dependency
