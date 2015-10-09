@@ -15,9 +15,9 @@
 
   require('jq-render');
 
-  var Plugin = function(element, specification) {
-    if (!$.isPlainObject(specification)) {
-      $.error('Component specification should be an object');
+  var Plugin = function(element, specs) {
+    if (!$.isPlainObject(specs)) {
+      $.error('Component specs should be an object');
     }
     this.element = element;
     this.$views = $('script[type^=text]', element).map(function() {
@@ -26,7 +26,7 @@
       $(this).replaceWith($view);
       return $view;
     });
-    $.extend(this, specification);
+    $.extend(this, specs);
     this.state = {};
     this.props = $(element).data();
     this.on(element, 'click [on-click]', this.onClick);
@@ -67,18 +67,23 @@
     this.render();
   };
 
+  Plugin.prototype.componentDidRender = function() {
+    // Nothing yet!
+  };
+
   Plugin.prototype.render = function() {
     this.$views.render(this.state);
     this.refs = $('[ref]', this.element).toArray().reduce(function(p, c) {
       p[c.attributes.ref.value] = c;
       return p;
     }, {});
+    this.componentDidRender();
   };
 
-  $.fn[pluginName] = function(specification) {
+  $.fn[pluginName] = function(specs) {
     return this.each(function() {
       if (!$(this).data('plugin_' + pluginName)) {
-        $(this).data('plugin_' + pluginName, new Plugin(this, specification || {}));
+        $(this).data('plugin_' + pluginName, new Plugin(this, specs || {}));
       } else {
         $.error('Sorry, ' + pluginName + ' can not be initialized again');
       }
