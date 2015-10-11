@@ -1,13 +1,8 @@
-### 0.1.2
+### 1.0.0
 
+* Changing major version number due to interface incompatibility introduced
 * Added componentDidRender() hook
-
-### 0.1.1
-
 * Add jq-render dependency
-
-### 0.1.0
-
 * Changes in plugin API
 
 ### 0.0.7
