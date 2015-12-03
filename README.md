@@ -2,6 +2,8 @@
 
 Simple jQuery component builder plugin strongly inspired in ReactJS syntax.
 
+[DEMO](http://cizar.github.io/demos/jq-component-todo.html)
+
 ## Usage
 
 Install the plugin
